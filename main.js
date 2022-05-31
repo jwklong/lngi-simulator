@@ -8,13 +8,13 @@ function lngi() {
 		number = number.add(new ExpantaNum(gain).div(30))
 	}
 	if (gaintype == "mul") {
-		number = number.mul(new ExpantaNum(gain).div(30))
+		number = number.mul(new ExpantaNum(gain).div(30).add(1))
 	}
 	if (gaintype == "pow") {
-		number = number.pow(new ExpantaNum(gain).div(30))
+		number = number.pow(new ExpantaNum(gain).div(30).add(1))
 	}
 	if (gaintype == "tet") {
-		number = number.tetrate(new ExpantaNum(gain).div(30))
+		number = number.tetrate(new ExpantaNum(gain).div(30).add(1))
 	}
 	document.getElementById("number").innerHTML = number.toStringWithDecimalPlaces(4)
 }
