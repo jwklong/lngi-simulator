@@ -22,7 +22,10 @@ function lngi() {
 		number = number.pow(number2.div(30).add(1))
 	}
 	if (gaintype == "tet") {
-		number = number.tetrate(new ExpantaNum(gain).div(30).add(1))
+		number = number.tetr(new ExpantaNum(gain).div(30).add(1))
+	}
+	if (gaintype == "pen") {
+		number = number.pent(new ExpantaNum(gain).div(30).add(1))
 	}
 	document.getElementById("number").innerHTML = number.toStringWithDecimalPlaces(4)
 }
