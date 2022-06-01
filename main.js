@@ -1,6 +1,7 @@
 const querymanager = new URLSearchParams(window.location.search)
 const gain = querymanager.has("gain") ? querymanager.get("gain") : "1"
 const gaintype = querymanager.has("gaintype") ? querymanager.get("gaintype") : "add"
+const cap = querymanager.has("cap") ? querymanager.get("cap") : Infinity
 
 var number = new ExpantaNum("2")
 var number2 = new ExpantaNum("0")
@@ -26,6 +27,10 @@ function lngi() {
 	}
 	if (gaintype == "pen") {
 		number = number.pent(new ExpantaNum(gain).div(30).add(1))
+	}
+	
+	if (number.gte(cap)) {
+		number = new ExpantaNum(cap)
 	}
 	document.getElementById("number").innerHTML = number.toStringWithDecimalPlaces(4)
 }
