@@ -2,8 +2,9 @@ const querymanager = new URLSearchParams(window.location.search)
 const gain = querymanager.has("gain") ? querymanager.get("gain") : "1"
 const gaintype = querymanager.has("gaintype") ? querymanager.get("gaintype") : "add"
 const cap = querymanager.has("cap") ? querymanager.get("cap") : Infinity
+const startnum = querymanager.has("startnum") ? querymanager.get("startnum") : "2"
 
-var number = new ExpantaNum("2")
+var number = new ExpantaNum(startnum)
 var number2 = new ExpantaNum("0")
 if (gaintype == "powpow") {
 	number2 = new ExpantaNum(gain)
