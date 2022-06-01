@@ -1,7 +1,8 @@
 const querymanager = new URLSearchParams(window.location.search)
 const gain = querymanager.has("gain") ? querymanager.get("gain") : "1"
 const gaintype = querymanager.has("gaintype") ? querymanager.get("gaintype") : "add"
-const cap = querymanager.has("cap") ? querymanager.get("cap") : Infinity
+const mincap = querymanager.has("mincap") ? querymanager.get("mincap") : Infinity
+const maxcap = querymanager.has("maxcap") ? querymanager.get("maxcap") : Infinity
 const startnum = querymanager.has("startnum") ? querymanager.get("startnum") : "2"
 
 var number = new ExpantaNum(startnum)
@@ -30,8 +31,11 @@ function lngi() {
 		number = number.pent(new ExpantaNum(gain).div(30).add(1))
 	}
 	
-	if (number.gte(cap)) {
-		number = new ExpantaNum(cap)
+	if (number.gte(maxcap)) {
+		number = new ExpantaNum(maxcap)
+	}
+	if (number.gte(mincap)) {
+		number = new ExpantaNum(mincap)
 	}
 	document.getElementById("number").innerHTML = number.toStringWithDecimalPlaces(4)
 }
