@@ -2,7 +2,7 @@ const querymanager = new URLSearchParams(window.location.search)
 const gain = querymanager.has("gain") ? querymanager.get("gain") : "1"
 const gaintype = querymanager.has("gaintype") ? querymanager.get("gaintype") : "add"
 const mincap = querymanager.has("mincap") ? querymanager.get("mincap") : Infinity
-const maxcap = querymanager.has("maxcap") ? querymanager.get("maxcap") : Infinity
+const maxcap = querymanager.has("maxcap") ? querymanager.get("maxcap") : -Infinity
 const startnum = querymanager.has("startnum") ? querymanager.get("startnum") : "2"
 
 var number = new ExpantaNum(startnum)
