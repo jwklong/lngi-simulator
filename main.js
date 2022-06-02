@@ -40,7 +40,7 @@ function lngi() {
 	if (number.gte(maxcap)) {
 		number = new ExpantaNum(maxcap)
 	}
-	if (number.gte(mincap)) {
+	if (number.lte(mincap)) {
 		number = new ExpantaNum(mincap)
 	}
 	document.getElementById("number").innerHTML = number.toStringWithDecimalPlaces(4)
