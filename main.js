@@ -4,12 +4,18 @@ const gaintype = querymanager.has("gaintype") ? querymanager.get("gaintype") : "
 const mincap = querymanager.has("mincap") ? querymanager.get("mincap") : Infinity
 const maxcap = querymanager.has("maxcap") ? querymanager.get("maxcap") : -Infinity
 const startnum = querymanager.has("startnum") ? querymanager.get("startnum") : "2"
+const background = querymanager.has("background") ? querymanager.get("background") : "#222"
+const textcolor = querymanager.has("textcolor") ? querymanager.get("textcolor") : "#fff"
+
+document.getElementById("body").style.background = background
+document.getElementById("body").style.color = textcolor
 
 var number = new ExpantaNum(startnum)
 var number2 = new ExpantaNum("0")
 if (gaintype == "powpow") {
 	number2 = new ExpantaNum(gain)
 }
+
 function lngi() {
 	if (gaintype == "add") {
 		number = number.add(new ExpantaNum(gain).div(30))
